@@ -30,7 +30,7 @@ var server = http.createServer(function(request, response){
     <link rel="stylesheet" href="/x">
     </head>
     <body>
-    <h1>哈哈</h1>
+    <h1>这是标题</h1>
     <script src="/y"> </script>
     </body>
     `)
@@ -38,7 +38,7 @@ var server = http.createServer(function(request, response){
   } else if(path === '/x'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/css;charset=utf-8')
-    response.write(`body{color: red;}`)
+    response.write(`h1{color: red;}`)
     response.end()
   } else if(path === '/y'){
     response.statusCode = 200
@@ -48,7 +48,7 @@ var server = http.createServer(function(request, response){
   } else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`你输入的路径不存在对应的内容`)
+    response.write(`你访问的页面不存在`)
     response.end()
   }
 
